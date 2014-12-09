@@ -1,0 +1,32 @@
+<div class="page-header">
+  <%= link_to translation_words_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_translation_word_path(@translation_word), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show translation_word</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Prev:</dt>
+  <dd><%= @translation_word.prev_id %></dd>
+
+  <dt>Cud type:</dt>
+  <dd><%= @translation_word.cud_type %></dd>
+
+  <dt>Work:</dt>
+  <dd><%= @translation_word.work %></dd>
+
+  <dt>Locale:</dt>
+  <dd><%= @translation_word.locale %></dd>
+
+  <dt>Content:</dt>
+  <dd><%= @translation_word.content %></dd>
+
+  <dt>Progress status:</dt>
+  <dd><%= @translation_word.progress_status %></dd>
+
+</dl>

@@ -11,7 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141206122203) do
+ActiveRecord::Schema.define(version: 20141209131948) do
+
+  create_table "dictionaries", force: true do |t|
+    t.string   "name",            null: false
+    t.text     "description"
+    t.integer  "created_user_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locales", force: true do |t|
+    t.string   "lang_territory", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "translation_words", force: true do |t|
+    t.integer  "prev_id"
+    t.string   "cud_type",        null: false
+    t.integer  "work_id",         null: false
+    t.integer  "locale_id",       null: false
+    t.text     "content"
+    t.string   "progress_status", null: false
+    t.integer  "created_user_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "translation_words", ["locale_id"], name: "index_translation_words_on_locale_id", using: :btree
+  add_index "translation_words", ["work_id"], name: "index_translation_words_on_work_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -47,5 +76,15 @@ ActiveRecord::Schema.define(version: 20141206122203) do
   add_index "users", ["invitations_count"], name: "index_users_on_invitations_count", using: :btree
   add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "words", force: true do |t|
+    t.integer  "dictionary_id",   null: false
+    t.string   "use_status",      null: false
+    t.integer  "created_user_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "words", ["dictionary_id"], name: "index_words_on_dictionary_id", using: :btree
 
 end

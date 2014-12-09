@@ -1,0 +1,31 @@
+<div class="page-header">
+  <%= link_to new_dictionary_path, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Dictionary
+  <% end %>
+  <h1>Listing dictionaries</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @dictionaries) do |dictionary| %>
+            <td><%= dictionary.name %></td>
+            <td><%= dictionary.description %></td>
+            <td><%= link_to 'Show', dictionary %></td>
+        <td><%= link_to 'Edit', edit_dictionary_path(dictionary) %></td>
+        <td><%= link_to 'Destroy', dictionary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
