@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
+
 ruby '2.1.2'
 gem 'rails', '4.1.8'
 gem 'sass-rails', '~> 4.0.3'
@@ -53,3 +55,8 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
 end
+
+# add
+gem 'rails-assets-angular'
+gem 'rails-assets-angular-resource'
+gem 'rails-assets-angular-material'

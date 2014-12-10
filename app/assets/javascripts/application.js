@@ -15,4 +15,10 @@
 //#=# #require #turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap
+//= require hammerjs
+//= require angular
+//= require angular-resource
+//= require angular-animate
+//= require angular-aria
+//= require angular-material
 //= require_tree .
