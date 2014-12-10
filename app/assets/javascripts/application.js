@@ -17,8 +17,10 @@
 //= require bootstrap
 //= require hammerjs
 //= require angular
+//= require angular-route
 //= require angular-resource
 //= require angular-animate
 //= require angular-aria
 //= require angular-material
+//= require app
 //= require_tree .

@@ -1,0 +1,25 @@
+<div class="authform">
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
+    <h3>Sign in</h3>
+    <%= devise_error_messages! %>
+    <div class="form-group">
+      <md-text-float label="eMail" ng-model="user.email" name="user[email]" type="email" class="form-group__input"></md-text-float>
+    </div>
+    <div class="form-group clearfix">
+      <md-text-float label="Password" ng-model="user.password" name="user[password]" type="password" class="form-group__input"></md-text-float>
+      <%- if devise_mapping.recoverable? %>
+        <%= link_to "Forgot password?", new_password_path(resource_name), class: 'right' %>
+      <% end -%>
+    </div>
+    <div class="right">
+      <md-button class="md-primary md-raised">Sign in</md-button>
+    </div>
+    <% if devise_mapping.rememberable? -%>
+      <div class="checkbox" style="width:150px">
+        <md-checkbox ng-model="user.remember_me" aria-label="Remember me" name="user[remember_me]">
+          Remember me
+        </md-checkbox>
+      </div>
+    <% end -%>
+  <% end %>
+</div>

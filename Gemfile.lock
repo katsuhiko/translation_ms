@@ -170,6 +170,8 @@ GEM
       rails-assets-hammerjs (~> 2.0.2)
     rails-assets-angular-resource (1.3.6)
       rails-assets-angular (= 1.3.6)
+    rails-assets-angular-route (1.3.6)
+      rails-assets-angular (= 1.3.6)
     rails-assets-hammerjs (2.0.4)
     rails_12factor (0.0.3)
       rails_serve_static_assets
@@ -309,6 +311,7 @@ DEPENDENCIES
   rails-assets-angular
   rails-assets-angular-material
   rails-assets-angular-resource
+  rails-assets-angular-route
   rails_12factor
   rails_layout
   rb-fchange
